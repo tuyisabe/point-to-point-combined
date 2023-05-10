@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "552487722269",
+    "firebase_url": "https://taxi-cab-airport-shuttle-default-rtdb.firebaseio.com",
+    "project_id": "taxi-cab-airport-shuttle",
+    "storage_bucket": "taxi-cab-airport-shuttle.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:552487722269:android:ed2b125db90e933794d5f4",
+        "android_client_info": {
+          "package_name": "com.ptp01.customer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "552487722269-mp0cv0d6o7na80nhavk7bqqr7kg49s7n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtz_8_zyWkzR49G9FY2Z3PwjJ1WrjpX1A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "552487722269-mp0cv0d6o7na80nhavk7bqqr7kg49s7n.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "552487722269-n7ch8uq4sep50trmbg11ddqs5p24dc16.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ptp01.customer"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:552487722269:android:41569d37db414d4894d5f4",
+        "android_client_info": {
+          "package_name": "com.taxi.cab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "552487722269-mp0cv0d6o7na80nhavk7bqqr7kg49s7n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtz_8_zyWkzR49G9FY2Z3PwjJ1WrjpX1A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "552487722269-mp0cv0d6o7na80nhavk7bqqr7kg49s7n.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "552487722269-n7ch8uq4sep50trmbg11ddqs5p24dc16.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ptp01.customer"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
