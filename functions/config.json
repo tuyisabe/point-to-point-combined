@@ -6,7 +6,7 @@
 	"android_app_version": "100",
 	"facebookAppId": "1131732104392831",
 	"facebookClientToken": "ee6f8da8ca140c776fcca3eafead879f",
-	"firebaseProjectId": "ut-cabs",
+	"firebaseProjectId": "taxi-cab-airport-shuttle",
 	"googleApiKeys": {
 		"ios": "AIzaSyCC_wdBUmKVvrMqbrc-S4M4t0owtNfNubk",
 		"android": "AIzaSyCtz_8_zyWkzR49G9FY2Z3PwjJ1WrjpX1A",
@@ -14,7 +14,7 @@
 		"server": "AIzaSyAGCYVq-VgIsnn8-O04fynjG-JsQ_HwUI4"
 	},
 	"expo_owner": "utcabs",
-	"expo_slug": "ut-cabs",
+	"expo_slug": "taxi-cab-airport-shuttle",
 	"expo_project_id": "7ca8c897-b4e9-4c53-932e-d798c78b7fd5",
 	"admin_email": "cabsut.info@gmail.com",
 	"codecanyon_purchase_code": "f3388f65-1c7e-40e7-a5a1-b471214d4e25",
@@ -65,9 +65,9 @@
 		"paypal": {
 			"active": false,
 			"testing": true,
-			"paypal_client_id": "AfvFzoeMNTVTYQEZwCPeJcyjB7TikW3eD6b9CncIrjhiGCbS-0PwSoL8Bl4N18DsiqPZKsJaOZUIQANI",
-			"paypal_secret": "ELyVmapWPvmUPuDseccom5nFVqV_VwMyeLo1CnHm8VK5E4QQE_EcnxCbq8smFVVXaXMVNh6OdHUxqFbk"
-},
+			"paypal_client_id": "AaNlAxaSLDXE8rdBDpIivDWmcLh6grqXD5Z7RfiwiX1tmaD5_eDDJMSicjusRaTD1k8X6gOYXQggkFKI",
+			"paypal_secret": "EGHQVC29YGr7GTYmOhj_gMNtAaGd_7GIg0uMVcfVVVi-8VrSqLQkpEW7Fli76oqRHBEzYnZogSFuF9aq"
+		},
 		"paystack": {
 			"active": false,
 			"PAYSTACK_PUBLIC_KEY": "XXXXXXXXXXXXXXX",
