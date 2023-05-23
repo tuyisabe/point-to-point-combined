@@ -8,5 +8,5 @@ module.exports.AppConfig = {
     facebookClientToken: 'ee6f8da8ca140c776fcca3eafead879f',
     expo_owner: 'utcabs',
     expo_slug: 'taxi-cab-airport-shuttle',
-    expo_project_id: '7ca8c897-b4e9-4c53-932e-d798c78b7fd5'
+    expo_project_id: '78aeccf3-12d6-4759-9a1a-a14b785db4e8'
 }
