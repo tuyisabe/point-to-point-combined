@@ -1,7 +1,7 @@
 {
 	"app_name": "UTCABS TAXI",
 	"app_description": "Utcabs Taxi",
-	"app_identifier": "com.ptp01.customer",
+	"app_identifier": "com.taxi.cab",
 	"ios_app_version": "1.0.0",
 	"android_app_version": "100",
 	"facebookAppId": "1131732104392831",
