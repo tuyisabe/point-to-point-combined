@@ -1,7 +1,7 @@
 {
-  "name": "exicubeapps",
+  "name": "utcabs",
   "version": "3.3.0",
-  "description": "Exicube App Solutions",
+  "description": "UTCABS App Solutions",
   "scripts": {
     "app": "yarn workspace mobile-app start",
     "app:publish": "cd mobile-app && eas update",
@@ -22,7 +22,7 @@
     "functions",
     "common"
   ],
-  "author": "Exicube App Solutions (OPC) Private Limited",
+  "author": "Utcabs App Solutions (OPC) Private Limited",
   "private": true,
   "dependencies": {
     "concurrently": "7.0.0",
