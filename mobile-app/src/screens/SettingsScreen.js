@@ -168,7 +168,7 @@ export default function SettingsScreen(props) {
                                         <Icon
                                             name={item.icon}
                                             type={item.type}
-                                            color={colors.BLACK}
+                                            color={colors.BLUE}
                                             size={26}
                                             containerStyle={{ margin: 15 }}
                                         />
