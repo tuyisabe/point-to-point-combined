@@ -29,6 +29,7 @@ import {
     Notifications as NotificationsPage,
     SettingsScreen,
     CarsScreen,
+    Home,
     CarEditScreen
 } from '../screens';
 var { height, width } = Dimensions.get('window');
@@ -236,6 +237,7 @@ export default function AppContainer() {
                     </Stack.Group>
                     :
                     <Stack.Group screenOptions={{ headerShown: false }}>
+                        <Stack.Screen name="Home" component={Home}/>
                         <Stack.Screen name="Login" component={LoginScreen}/>
                         <Stack.Screen name="Register" component={RegistrationPage}/>
                     </Stack.Group>

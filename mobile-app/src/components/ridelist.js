@@ -24,7 +24,7 @@ export default function RideList(props) {
                 <TouchableOpacity onPress={() => onPressButton(item, index)}>
                     <View style={[styles.vew, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
                         <View style={styles.iconViewStyle}>
-                            <Entypo name="pin" size={28} color="black" />
+                            <Entypo name="pin" size={28} color={colors.BLUE} />
                         </View>
                         <View style={{ width: '90%', flexDirection: isRTL ? 'row-reverse' : 'row', justifyContent: 'space-around', alignItems: 'center' }}>
                             <View>
@@ -46,25 +46,17 @@ export default function RideList(props) {
                                     :
                                     <Text style={styles.dateStyle}>{item.status == 'PAID' || item.status == 'COMPLETE' ? item.customer_paid ? parseFloat(item.customer_paid).toFixed(settings.decimal) + settings.symbol : parseFloat(item.estimate).toFixed(settings.decimal) + settings.symbol : null}</Text>
                                 }
-                                {
-                                    item.status == 'CANCELLED' ?
-                                        <Image
-                                            style={[styles.cancelImageStyle, isRTL ? { marginLeft: 20, alignSelf: 'flex-start' } : { marginRight: 20, alignSelf: 'flex-end', }]}
-                                            source={require('../../assets/images/cancel.png')}
-                                        />
-                                        :
-                                        null
-                                }
+
                             </View>
                         </View>
                     </View>
                     <View style={{ padding: 20 }}>
                         <View style={[styles.position, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
-                            <Ionicons name="md-location-outline" size={26} color={colors.RIDELIST_TEXT} />
+                            <Ionicons name="md-location-outline" size={26} color={colors.GREEN_DOT} />
                             <Text style={styles.picPlaceStyle}>{item.pickup ? item.pickup.add : t('not_found_text')}</Text>
                         </View>
                         <View style={[styles.position, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
-                            <Feather name="flag" size={26} color={colors.RIDELIST_TEXT} />
+                            <Feather name="flag" size={26} color={colors.RED} />
                             <Text style={styles.picPlaceStyle}>{item.drop ? item.drop.add : t('not_found_text')}</Text>
                         </View>
                     </View>
@@ -153,7 +145,7 @@ const styles = StyleSheet.create({
     },
     dateStyle: {
         fontFamily: 'Roboto-Bold',
-        color: colors.HEADER,
+        color: colors.BLUE,
         fontSize:18
     },
     carNoStyle: {

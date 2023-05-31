@@ -52,15 +52,7 @@ export default function App() {
 
   const _loadResourcesAsync = async () => {
     return Promise.all([
-      Asset.loadAsync([
-        require("./assets/images/intro.gif"),
-        // require('./assets/images/background.jpg'),
-        // require('./assets/images/logo165x90white.png'),
-        // require('./assets/images/bg.jpg'),
-        // require('./assets/images/intro.jpg'),
-        // require('./assets/images/g4.gif'),
-        // require('./assets/images/lodingDriver.gif')
-      ]),
+      Asset.loadAsync([require("./assets/images/lodingDriver.gif")]),
       Font.loadAsync({
         "Roboto-Bold": require("./assets/fonts/Roboto-Bold.ttf"),
         "Roboto-Regular": require("./assets/fonts/Roboto-Regular.ttf"),
@@ -108,8 +100,8 @@ export default function App() {
     return (
       <View style={styles.container}>
         <ImageBackground
-          source={require("./assets/images/intro.gif")}
-          resizeMode="cover"
+          source={require("./assets/images/intro.jpg")}
+          resizeMode="stretch"
           style={styles.imagebg}
         >
           <ActivityIndicator

@@ -149,9 +149,9 @@ export default function Registration(props) {
             <View style={{flex: 1, position: 'absolute',backgroundColor: colors.TRANSPARENT, height:'100%', width: '100%' }}>
                 <View style={[styles.logo, { backgroundColor: MAIN_COLOR }]}>
                     <TouchableOpacity style={isRTL ? { marginRight: 10, marginBottom: 5, alignSelf: 'flex-end', width: 70, padding: 8,marginTop:12 } : { marginLeft: 10, marginBottom: 5, width: 70, padding: 8,marginTop:12 }} onPress={props.onPressBack}>
-                        <Feather name={isRTL ? 'arrow-right' : "arrow-left"} size={40} color="black" />
+                        <Feather name={isRTL ? 'arrow-right' : "arrow-left"} size={40} color="white" />
                     </TouchableOpacity>
-                    <Text style={[styles.headerStyle, [isRTL ? { marginRight: 25, textAlign: 'right',padding:8} : { marginLeft: 8,padding:8}]]}>{t('registration_title')}</Text>
+                    <Text style={[styles.headerStyle, [isRTL ? { marginRight: 25, textAlign: 'right',padding:8} : { marginLeft: 8,padding:4}]]}>{t('registration_title')}</Text>
                 </View>
                 <View style={{height: '85%'}}>
                     <ScrollView style={styles.scrollViewStyle} showsVerticalScrollIndicator={false}>
@@ -159,7 +159,7 @@ export default function Registration(props) {
                             <KeyboardAvoidingView style={styles.form} behavior={Platform.OS == "ios" ? "padding" : (__DEV__ ? null : "padding" )}>
                                 <View style={[styles.textInputContainerStyle, { justifyContent: 'flex-start' }, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
                                     <View style={styles.iconContainer}>
-                                        <MaterialCommunityIcons name="account-supervisor-outline" size={24} color={colors.HEADER} />
+                                        <MaterialCommunityIcons name="account-supervisor-outline" size={30} color={colors.BLUE} />
                                     </View>
                                     <RadioForm
                                         radio_props={radio_props}
@@ -167,12 +167,12 @@ export default function Registration(props) {
                                         animation={false}
                                         formHorizontal={true}
                                         labelHorizontal={true}
-                                        buttonColor={colors.HEADER}
-                                        labelColor={colors.HEADER}
+                                        buttonColor={colors.BLUE}
+                                        labelColor={colors.BLUE}
                                         style={isRTL ? { marginRight: 20 } : { marginLeft: 20 }}
                                         labelStyle={isRTL ? { marginRight: 10 } : { marginRight: 10 }}
-                                        selectedButtonColor={colors.HEADER}
-                                        selectedLabelColor={colors.HEADER}
+                                        selectedButtonColor={colors.GREEN_DOT}
+                                        selectedLabelColor={colors.GREEN_DOT}
                                         onPress={(value) => {
                                             if (value == 0) {
                                                 setState({ ...state, usertype: 'customer' });
@@ -184,7 +184,7 @@ export default function Registration(props) {
                                 </View>
                                 <View style={[styles.textInputContainerStyle, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
                                     <View style={styles.iconContainer}>
-                                        <MaterialCommunityIcons name="account-outline" size={24} color={colors.HEADER} />
+                                        <MaterialCommunityIcons name="account-outline" size={30} color={colors.BLUE} />
                                     </View>
                                     <View style={{ width: '75%' }}>
                                         <Input
@@ -204,7 +204,7 @@ export default function Registration(props) {
 
                                 <View style={[styles.textInputContainerStyle, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
                                     <View style={styles.iconContainer}>
-                                        <MaterialCommunityIcons name="account-outline" size={24} color={colors.HEADER} />
+                                        <MaterialCommunityIcons name="account-outline" size={30} color={colors.BLUE} />
                                     </View>
                                     <View style={{ width: '75%' }}>
                                         <Input
@@ -230,7 +230,7 @@ export default function Registration(props) {
                                     ]}
                                 >
                                     <View style={styles.iconContainer}>
-                                        <MaterialCommunityIcons name="cellphone-marker" size={24} color={colors.HEADER} /></View>
+                                        <MaterialCommunityIcons name="cellphone-marker" size={30} color={colors.BLUE} /></View>
                                     <View style={{ width: '75%' }}>
                                         <RNPickerSelect
                                             pickerRef={pickerRef1}
@@ -249,13 +249,13 @@ export default function Registration(props) {
                                             onValueChange={(text) => { upDateCountry(text); }}
                                             items={formatCountries()}
                                             disabled={settings.AllowCountrySelection ? false : true}
-                                            Icon={() => { return <Ionicons style={{ top: 15, marginRight: isRTL ? '80%' : 0 }} name="md-arrow-down" size={24} color="gray" />; }}
+                                            Icon={() => { return <Ionicons style={{ top: 15, marginRight: isRTL ? '80%' : 0 }} name="md-arrow-down" size={30} color="gray" />; }}
 
                                         /></View>
                                 </View>
                                 <View style={[styles.textInputContainerStyle, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
                                     <View style={styles.iconContainer}>
-                                        <MaterialCommunityIcons name="cellphone-information" size={24} color={colors.HEADER} />
+                                        <MaterialCommunityIcons name="cellphone-information" size={30} color={colors.BLUE} />
                                     </View>
                                     <View style={{ width: '75%' }}>
                                         <Input
@@ -280,7 +280,7 @@ export default function Registration(props) {
                                 </View>
                                 <View style={[styles.textInputContainerStyle, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
                                     <View style={styles.iconContainer}>
-                                        <Entypo name="email" size={24} color={colors.HEADER} />
+                                        <Entypo name="email" size={30} color={colors.BLUE} />
                                     </View>
                                     <View style={{ width: '75%' }}>
                                         <Input
@@ -300,7 +300,7 @@ export default function Registration(props) {
 
                                 <View style={[styles.textInputContainerStyle, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
                                     <View style={styles.iconContainer}>
-                                        <MaterialCommunityIcons name="form-textbox-password" size={24} color={colors.HEADER} />
+                                        <MaterialCommunityIcons name="form-textbox-password" size={30} color={colors.BLUE} />
                                     </View>
                                     <View style={{ width: '75%',flexDirection: isRTL ? 'row-reverse' : 'row', alignItems:'center' }}>
                                         <Input
@@ -316,16 +316,16 @@ export default function Registration(props) {
                                         />
                                         <TouchableOpacity onPress={() => setEyePass(!eyePass)}>
                                             {eyePass?
-                                                <Feather name="eye-off" size={20} color={colors.HEADER} />
+                                                <Feather name="eye-off" size={20} color={colors.BLUE} />
                                             :
-                                                <Feather name="eye" size={20} color={colors.HEADER} />
+                                                <Feather name="eye" size={20} color={colors.BLUE} />
                                             }
                                         </TouchableOpacity>
                                     </View>
                                 </View>
                                 <View style={[styles.textInputContainerStyle, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
                                     <View style={styles.iconContainer}>
-                                        <MaterialCommunityIcons name="form-textbox-password" size={24} color={colors.HEADER} />
+                                        <MaterialCommunityIcons name="form-textbox-password" size={30} color={colors.BLUE} />
                                     </View>
                                     <View style={{ width: '75%',flexDirection: isRTL ? 'row-reverse' : 'row', alignItems:'center'  }}>
                                         <Input
@@ -341,9 +341,9 @@ export default function Registration(props) {
                                         />
                                         <TouchableOpacity onPress={() => setEyeConfirmPass(!eyeConfirmPass)}>
                                             {eyeConfirmPass?
-                                                <Feather name="eye-off" size={20} color={colors.HEADER} />
+                                                <Feather name="eye-off" size={20} color={colors.BLUE} />
                                             :
-                                                <Feather name="eye" size={20} color={colors.HEADER} />
+                                                <Feather name="eye" size={20} color={colors.BLUE} />
                                             }
                                         </TouchableOpacity>
                                     </View>
@@ -351,7 +351,7 @@ export default function Registration(props) {
 
                                 <View style={[styles.textInputContainerStyle, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
                                     <View style={styles.iconContainer}>
-                                        <MaterialCommunityIcons name="account-lock-open-outline" size={24} color={colors.HEADER} />
+                                        <MaterialCommunityIcons name="account-lock-open-outline" size={30} color={colors.BLUE} />
                                     </View>
                                     <View style={{ width: '75%' }}>
                                         <Input
@@ -399,9 +399,10 @@ const styles = StyleSheet.create({
     },
     textInputContainerStyle: {
         width: '90%',
-        height: 65,
+        height: 75,
         borderRadius: 15,
         marginVertical: 10,
+        marginLeft:15,
         shadowColor: colors.BLACK,
         shadowOffset: {
             width: 0,
@@ -448,6 +449,7 @@ const styles = StyleSheet.create({
         borderWidth: 0,
         marginTop: 30,
         borderRadius: 15,
+        backgroundColor:colors.GREEN_DOT
     },
     buttonTitle: {
         fontSize: 16
