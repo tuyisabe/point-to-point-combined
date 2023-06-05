@@ -434,10 +434,10 @@ export default function LoginScreen(props) {
               Icon={() => {
                 return (
                   <Ionicons
-                    style={{ marginTop: 3 }}
+                    style={{ marginTop: 5 }}
                     name="md-arrow-down"
                     size={20}
-                    color="gray"
+                    color={colors.BLUE}
                   />
                 );
               }}
@@ -487,7 +487,7 @@ export default function LoginScreen(props) {
             alignSelf: "center",
             flexDirection: "column",
             justifyContent: "space-between",
-            marginTop: "-70%",
+            marginTop: "-85%",
           }}
         >
           {loginType == "mobile" ? (
@@ -574,7 +574,7 @@ export default function LoginScreen(props) {
                       padding: 20,
                     },
                   ]}
-                  placeholder={("Enter your Email")}
+                  placeholder={"Enter your Email"}
                   onChangeText={(value) =>
                     setState({ ...state, contact: value })
                   }
@@ -601,7 +601,10 @@ export default function LoginScreen(props) {
               <TextInput
                 style={[
                   styles.textInput1,
-                  { textAlign: isRTL ? "right" : "left" },
+                  {
+                    textAlign: isRTL ? "right" : "left",
+                    borderColor: autoFocus ? colors.BLUE : colors.LIGHT_GREY,
+                  },
                 ]}
                 placeholder={t("password")}
                 onChangeText={(value) =>
@@ -650,11 +653,41 @@ export default function LoginScreen(props) {
             </TouchableOpacity>
           )}
         </View>
+
+        {!!state.verificationId ? (
+          <View style={styles.box2}>
+            <TextInput
+              style={[
+                styles.textInput,
+                { textAlign: isRTL ? "right" : "left" },
+              ]}
+              placeholder={t("otp_here")}
+              onChangeText={(value) =>
+                setState({ ...state, verificationCode: value })
+              }
+              value={state.verificationCode}
+              editable={!!state.verificationId}
+              keyboardType="phone-pad"
+              secureTextEntry={true}
+              placeholderTextColor={colors.MAP_TEXT}
+            />
+          </View>
+        ) : null}
+        {!!state.verificationId ? (
+          <MaterialButtonDark
+            onPress={onSignIn}
+            style={[styles.materialButtonDark, { fontSize: 20 }]}
+          >
+            {t("verify_otp")}
+          </MaterialButtonDark>
+        ) : null}
+
         {state.verificationId || isNaN(state.contact) ? (
           <View
             style={{ flexDirection: "row", justifyContent: "space-around" }}
           >
-            {state.verificationId || isNaN(state.contact) && loginType == "email" ? (
+            {state.verificationId ||
+            (isNaN(state.contact) && loginType == "email") ? (
               <View style={styles.actionLine}>
                 <TouchableOpacity
                   style={styles.actionItem}
@@ -890,30 +923,6 @@ export default function LoginScreen(props) {
           {isNaN(state.contact) ? t("signIn") : t("request_otp")}
         </MaterialButtonDark>
       )} */}
-      {!!state.verificationId ? (
-        <View style={styles.box2}>
-          <TextInput
-            style={[styles.textInput, { textAlign: isRTL ? "right" : "left" }]}
-            placeholder={t("otp_here")}
-            onChangeText={(value) =>
-              setState({ ...state, verificationCode: value })
-            }
-            value={state.verificationCode}
-            editable={!!state.verificationId}
-            keyboardType="phone-pad"
-            secureTextEntry={true}
-            placeholderTextColor={colors.MAP_TEXT}
-          />
-        </View>
-      ) : null}
-      {!!state.verificationId ? (
-        <MaterialButtonDark
-          onPress={onSignIn}
-          style={styles.materialButtonDark}
-        >
-          {t("verify_otp")}
-        </MaterialButtonDark>
-      ) : null}
 
       {/* {(Platform.OS == "ios" && settings && settings.AppleLoginEnabled) ||
       (settings && settings.FacebookLoginEnabled) ? (
@@ -1011,17 +1020,18 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderRadius: 5,
   },
+
   box2: {
     height: 60,
-    width: width - 50,
+    width: width - 40,
     backgroundColor: colors.WHITE,
     marginTop: 5,
-
     borderWidth: 1,
     borderColor: colors.BORDER_BACKGROUND,
     justifyContent: "center",
     borderRadius: 5,
     margin: 10,
+    marginLeft: 22,
   },
   textInput: {
     color: colors.BACKGROUND,
@@ -1029,6 +1039,7 @@ const styles = StyleSheet.create({
     fontFamily: "Roboto-Regular",
     width: "100%",
     height: 60,
+    marginLeft:50
   },
   textInput1: {
     color: colors.BACKGROUND,
@@ -1037,12 +1048,13 @@ const styles = StyleSheet.create({
     width: width - 130,
   },
   materialButtonDark: {
-    height: 45,
+    height: 55,
     marginTop: 15,
-    marginLeft: 35,
-    marginRight: 35,
-    backgroundColor: colors.HEADER,
+    marginLeft: 30,
+    marginRight: 20,
+    backgroundColor: colors.BLUE,
     borderRadius: 10,
+    fontSize: 20,
   },
   linkBar: {
     flexDirection: "row",
@@ -1179,7 +1191,7 @@ const styles = StyleSheet.create({
   },
   headLanuage: {
     position: "absolute",
-    top: Platform.OS == "android" && !__DEV__ ? 40 : 35,
+    top: Platform.OS == "android" && !__DEV__ ? 50 : 50,
     flexDirection: "row",
     borderWidth: 0.4,
     borderRadius: 20,
