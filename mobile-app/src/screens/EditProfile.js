@@ -736,10 +736,6 @@ const styles = StyleSheet.create({
         position: 'relative',
         zIndex: 1
     },
-    imageStyle: {
-        width: 30,
-        height: height / 15
-    },
     flexView1: {
         flex: 12
     },

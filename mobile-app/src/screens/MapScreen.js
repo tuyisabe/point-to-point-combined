@@ -2731,11 +2731,11 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     paddingHorizontal: 10,
   },
-  imageStyle: {
-    width: width / 4.5,
-    // height: height / 10.5,
-    alignItems: "center",
-  },
+  // imageStyle: {
+  //   width: width / 4.5,
+  //   // height: height / 10.5,
+  //   alignItems: "center",
+  // },
   imageStyle1: {
     width: "100%",
     height: "100%",
