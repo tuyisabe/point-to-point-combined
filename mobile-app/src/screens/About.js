@@ -73,12 +73,12 @@ export default function AboutPage(props) {
           >
             <Image
               style={{
-                width: 400,
+                width: 380,
                 height: 100,
                 borderRadius: 15,
                 marginTop: 0,
               }}
-              source={require("../../assets/images/logo-1.png")}
+              source={require("../../assets/images/CombineLogo.png")}
             />
           </View>
           <View style={{ width: "100%" }}>

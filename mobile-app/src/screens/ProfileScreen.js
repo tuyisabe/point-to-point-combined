@@ -365,9 +365,62 @@ export default function ProfileScreen(props) {
                             <View style={[styles.loadingcontainer, styles.horizontal]}>
                                 <ActivityIndicator size="large" color={colors.INDICATOR_BLUE} />
                             </View>
-                            : <TouchableOpacity onPress={showActionSheet}>
-                                <Image source={profileData && profileData.profile_image ? { uri: profileData.profile_image } : require('../../assets/images/profilePic.png')} style={{ width: 95, height: 95, alignSelf: 'center', borderRadius: 95 / 2 }} />
-                            </TouchableOpacity>
+                            : (
+                                <View
+                                  style={{
+                                    borderRadius: 120 / 2,
+                                    width: 120,
+                                    height: 120,
+                                    backgroundColor: colors.LIGHT_GREY,
+                                    elevation: 10,
+                                  }}
+                                >
+                                  {profileData && profileData.profile_image ? (
+                                    <Image
+                                      source={{ uri: profileData.profile_image }}
+                                      style={{
+                                        borderRadius: 110 / 2,
+                                        width: 110,
+                                        height: 110,
+                                        position: "absolute",
+                                        top: 5,
+                                        left: 5,
+                                      }}
+                                    />
+                                  ) : (
+                                    <Icon
+                                      name="user"
+                                      type="font-awesome"
+                                      size={100}
+                                      color={colors.BLUE}
+                                      style={{ marginTop: 5,marginTop:20,marginLeft:-10,marginRight:10,marginBottom:20  }}
+                                    />
+                                  )}
+                                  <TouchableOpacity
+                                    style={{
+                                      position: "absolute",
+                                      bottom: 0,
+                                      right: 0,
+                                      backgroundColor: colors.GREY,
+                                      borderRadius: 40 / 2,
+                                      width: 40,
+                                      height: 40,
+                                      elevation: 10,
+                                      borderWidth: 1,
+                                      borderColor: "#DFDFE9",
+                                      justifyContent: "center",
+                                    }}
+                                    onPress={showActionSheet}
+                                  >
+                                    <Icon
+                                      name="camera-sharp"
+                                      type="ionicon"
+                                      color={colors.BLUE}
+                                      size={20}
+                                    />
+                                  </TouchableOpacity>
+                                </View>
+                              )
                         }
 
                     </View>
@@ -420,7 +473,7 @@ export default function ProfileScreen(props) {
                             </TouchableOpacity>
                         :
                             <TouchableOpacity onPress={() => setEditName(true)}>
-                                <Feather name="edit-3" size={22} color={colors.CONVERTDRIVER_TEXT} style={{marginTop:10}} />
+                                <Feather name="edit-3" size={22} color={colors.BLUE} style={{marginTop:10}} />
                             </TouchableOpacity>
                         }
                     </View>
@@ -435,7 +488,7 @@ export default function ProfileScreen(props) {
 
                     <View style={[styles.myViewStyle, { flexDirection: isRTL ? 'row-reverse' : 'row', height: editEmail ? 74 : 54 }]}>
                         <View style={styles.iconViewStyle}>
-                            <Entypo name="email" size={25} color={colors.PROFILE_PLACEHOLDER_CONTENT} />
+                            <Entypo name="email" size={25} color={colors.BLUE} />
                         </View>
                         <View style={[styles.flexView1, [isRTL ? { marginRight: 15, width: width - 70 } : { width: width - 70}]]}>
                             <Text style={[styles.text1,isRTL? {textAlign: 'right'} : {textAlign: 'left'}]}>{t('email_placeholder')}</Text>
@@ -465,14 +518,14 @@ export default function ProfileScreen(props) {
                                 {editEmail ?
                                     <TouchableOpacity onPress={() => saveProfile(1)} style={[isRTL?{marginRight:20}:{marginLeft:20}]}>
                                          {loading ?
-                                            <ActivityIndicator color={colors.BLACK} size='small'/>
+                                            <ActivityIndicator color={colors.BLUE} size='small'/>
                                         :
-                                            <MaterialIcons name="check" size={24} color={colors.SKY} />
+                                            <MaterialIcons name="check" size={24} color={colors.BLUE} />
                                         }
                                     </TouchableOpacity>
                                 :
                                     <TouchableOpacity onPress={() => setEditEmail(true)} style={[isRTL?{marginRight:20}:{marginLeft:20}]}>
-                                        <Feather name="edit-3" size={22} color={colors.CONVERTDRIVER_TEXT} />
+                                        <Feather name="edit-3" size={22} color={colors.BLUE} />
                                     </TouchableOpacity>
                                 }
                             </View>
@@ -486,7 +539,7 @@ export default function ProfileScreen(props) {
                                 name='phone-call'
                                 type='feather'
                                 size={25}
-                                color={colors.PROFILE_PLACEHOLDER_CONTENT}
+                                color={colors.BLUE}
                             />
 
                         </View>
@@ -517,14 +570,14 @@ export default function ProfileScreen(props) {
                             {editMobile ?
                                 <TouchableOpacity onPress={() => saveProfile(2)} style={[isRTL?{marginRight:20}:{marginLeft:20}]}>
                                    {loading ?
-                                            <ActivityIndicator color={colors.BLACK} size='small'/>
+                                            <ActivityIndicator color={colors.BLUE} size='small'/>
                                         :
-                                            <MaterialIcons name="check" size={24} color={colors.SKY} />
+                                            <MaterialIcons name="check" size={24} color={colors.BLUE} />
                                         }
                                 </TouchableOpacity>
                             :
                                 <TouchableOpacity onPress={() => setEditMobile(true)} style={[isRTL?{marginRight:20}:{marginLeft:20}]}>
-                                    <Feather name="edit-3" size={22} color={colors.CONVERTDRIVER_TEXT} />
+                                    <Feather name="edit-3" size={22} color={colors.BLUE} />
                                 </TouchableOpacity>
                             }
                              </View>
@@ -535,7 +588,7 @@ export default function ProfileScreen(props) {
                         <View style={[styles.myViewStyle, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
                             <View style={styles.iconViewStyle}>
 
-                                <Ionicons name="language-sharp" size={25} color={colors.PROFILE_PLACEHOLDER_CONTENT} />
+                                <Ionicons name="language-sharp" size={25} color={colors.BLUE} />
                             </View>
                             <View style={[styles.flexView1, { alignSelf: isRTL ? 'flex-end' : 'flex-start', }]}>
                                 <Text style={[styles.text1, [isRTL ? { marginRight: 15 } : null]]}>{t('lang')}</Text>
@@ -571,7 +624,7 @@ export default function ProfileScreen(props) {
                                         }
                                         label={"Language"}
                                         items={Object.values(languagedata.langlist).map(function (value) { return { label: value.langName, value: value.langLocale }; })}
-                                        Icon={() => {return <Ionicons name="arrow-down" size={20} color="black" style={[isRTL?{marginLeft: Platform.OS == "ios" ? -80 : -60, marginTop: 5}:{marginRight: Platform.OS == "ios" ? -20 : 0, marginTop: 5}]}/>;}}
+                                        Icon={() => {return <Ionicons name="arrow-down" size={20} color={colors.BLUE} style={[isRTL?{marginLeft: Platform.OS == "ios" ? -80 : -60, marginTop: 5}:{marginRight: Platform.OS == "ios" ? -20 : 0, marginTop: 5}]}/>;}}
                                     />
                                 : null}
                             </View>
@@ -583,7 +636,7 @@ export default function ProfileScreen(props) {
                                 <Icon
                                     name='award'
                                     type='feather'
-                                    color={colors.PROFILE_PLACEHOLDER_CONTENT}
+                                    color={colors.BLUE}
                                     size={25}
                                 />
                             </View>
@@ -607,7 +660,7 @@ export default function ProfileScreen(props) {
                                 <Icon
                                     name={Platform.OS == 'android' ? 'share-social' : 'share'}
                                     type='ionicon'
-                                    color={colors.INDICATOR_BLUE}
+                                    color={colors.BLUE}
                                 />
                             </TouchableOpacity>
                         </View>
@@ -615,7 +668,7 @@ export default function ProfileScreen(props) {
                     {profileData && profileData.usertype == 'driver' ?
                         <View style={[styles.myViewStyle, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
                             <View style={[styles.iconViewStyle, { flexDirection: isRTL ? 'row-reverse' : 'row', }]}>
-                                <Ionicons name="md-car-sport-outline" size={25} color={colors.PROFILE_PLACEHOLDER_CONTENT} />
+                                <Ionicons name="md-car-sport-outline" size={25} color={colors.BLUE} />
                             </View>
                             <View style={[styles.flexView1, [isRTL ? { marginRight: 15 } : null]]}>
                                 <Text style={styles.text1}>{t('car_type')}</Text>
@@ -626,7 +679,7 @@ export default function ProfileScreen(props) {
                     {profileData && profileData.usertype == 'driver' ?
                         <View style={[styles.myViewStyle, { flexDirection: isRTL ? 'row-reverse' : 'row' }]}>
                             <View style={[styles.iconViewStyle, { flexDirection: isRTL ? 'row-reverse' : 'row', }]}>
-                                <MaterialCommunityIcons name="star-shooting-outline" size={25} color={colors.PROFILE_PLACEHOLDER_CONTENT} />
+                                <MaterialCommunityIcons name="star-shooting-outline" size={25} color={colors.BLUE} />
                             </View>
                             <View style={[styles.flexView1, [isRTL ? { marginRight: 15 } : null]]}>
                                 <Text style={styles.text1}>{t('you_rated_text')}</Text>
