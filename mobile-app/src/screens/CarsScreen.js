@@ -104,7 +104,7 @@ export default function CarsScreen(props) {
                                         <Text style={[styles.text,{marginHorizontal:5}]}>{c.vehicleMake}</Text>
                                         <Text style={styles.text}>{c.vehicleModel}</Text>
                                     </View>
-                                    <TouchableOpacity onPress={() => deleteCar(c)} style={[isRTL?{marginRight:20, width: 50, marginRight: -90}:{marginLeft:20, width: 50, marginLeft: -60}]}>
+                                    <TouchableOpacity onPress={() => deleteCar(c)} style={[isRTL?{marginRight:20, width: 50,}:{marginLeft:20, width: 50, }]}>
                                         <MaterialIcons name="delete" size={24} color={colors.WHITE} />
                                     </TouchableOpacity>
                                 </View>

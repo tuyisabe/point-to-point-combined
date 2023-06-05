@@ -1031,7 +1031,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderRadius: 5,
     margin: 10,
-    marginLeft: 22,
+    marginLeft: 5,
   },
   textInput: {
     color: colors.BACKGROUND,
@@ -1039,7 +1039,6 @@ const styles = StyleSheet.create({
     fontFamily: "Roboto-Regular",
     width: "100%",
     height: 60,
-    marginLeft:50
   },
   textInput1: {
     color: colors.BACKGROUND,
