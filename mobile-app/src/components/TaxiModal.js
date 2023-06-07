@@ -76,7 +76,7 @@ export default function TaxiModal(props) {
                                         coordinates={estimate.waypoints}
                                         strokeWidth={5}
                                         strokeColor={colors.INDICATOR_BLUE}
-                                        lineDashPattern={[1]}
+                                        //lineDashPattern={[1]}
                                     />
                                     : null}
 
@@ -116,7 +116,7 @@ export default function TaxiModal(props) {
                             <Icon
                                 name={isRTL ? 'arrow-right' : 'arrow-left'}
                                 type='font-awesome'
-                                color='#517fa4'
+                                color={colors.BLUE}
                                 size={25}
                             />
                         </TouchableOpacity>
@@ -247,7 +247,7 @@ export default function TaxiModal(props) {
                                     buttonColor={colors.RADIO_BUTTON}
                                     labelColor={colors.RADIO_BUTTON}
                                     labelStyle={isRTL ? { marginRight: 10, } : { marginRight: 10 }}
-                                    selectedButtonColor={colors.HEADER}
+                                    selectedButtonColor={colors.BLUE}
                                     selectedLabelColor={colors.HEADER}
                                     onPress={(value) => {
                                         setPaymentMode(value);
@@ -258,10 +258,10 @@ export default function TaxiModal(props) {
                                 <Button
                                     title={t('confirm')}
                                     loading={bookModelLoading}
-                                    loadingProps={{ size: "large", color: colors.BUTTON_LOADING }}
-                                    titleStyle={{ color: colors.HEADER, fontWeight: 'bold' }}
+                                    loadingProps={{ size: "large", color: colors.BLUE }}
+                                    titleStyle={{ color: colors.WHITE, fontWeight: 'bold' }}
                                     onPress={bookNow}
-                                    buttonStyle={{ height: '100%', backgroundColor: colors.BOX_BG, borderRadius: 25, }}
+                                    buttonStyle={{ height: '100%', backgroundColor: colors.BLUE, borderRadius: 25, }}
                                     containerStyle={styles.buttonStyle}
                                 />
                             </View>
@@ -323,8 +323,8 @@ const styles = StyleSheet.create({
         shadowRadius: 5,
         elevation: 8
     },
-    offerContainer: { height: 30, backgroundColor: colors.BOX_BG, width: width, justifyContent: 'center', borderBottomColor: colors.BOX_BG, borderBottomWidth: Platform.OS == 'ios' ? 1 : 0 },
-    offerText: { alignSelf: 'center', color: colors.MAP_TEXT, fontSize: 12, fontFamily: 'Roboto-Regular' },
+    offerContainer: { height: 30, backgroundColor: colors.BLUE, width: width, justifyContent: 'center', borderBottomColor: colors.BOX_BG, borderBottomWidth: Platform.OS == 'ios' ? 1 : 0 },
+    offerText: { alignSelf: 'center', color: colors.WHITE, fontSize: 12, fontFamily: 'Roboto-Regular' },
     priceDetailsContainer: { backgroundColor: colors.WHITE, flexDirection: 'row', position: 'relative', zIndex: 1, },
     priceDetailsLeft: { flex: 19, height: 90 },
     priceDetailsMiddle: { flex: 2, height: 50, width: 1, alignItems: 'center' },
@@ -343,7 +343,7 @@ const styles = StyleSheet.create({
         borderBottomWidth: 10,
         borderLeftColor: colors.TRANSPARENT,
         borderRightColor: colors.TRANSPARENT,
-        borderBottomColor: colors.BOX_BG,
+        borderBottomColor: colors.BLUE,
         transform: [
             { rotate: '180deg' }
         ],

@@ -532,7 +532,6 @@ export default function MapScreen(props) {
     }
   };
 
-  
   const selectCarType = (value, key, _vl) => {
     let carTypes = allCarTypes;
 
@@ -714,7 +713,6 @@ export default function MapScreen(props) {
       setAllCarTypes(carWiseArr);
     }
   };
-
 
   const tapAddress = (selection) => {
     if (selection === tripdata.selected) {
@@ -1407,7 +1405,7 @@ export default function MapScreen(props) {
               onPress={locateUser}
               style={styles.locateButtonStyle}
             >
-              <Icon name="gps-fixed"  color={colors.BLUE} size={30} />
+              <Icon name="gps-fixed" color={colors.BLUE} size={30} />
             </TouchableOpacity>
           </View>
         ) : null}
@@ -1643,126 +1641,122 @@ export default function MapScreen(props) {
           ) : null}
         </View>
       ) : (
-
         <>
-
-        
-              <View
-        style={[
-          styles.addressBar,
-          { flexDirection: isRTL ? "row-reverse" : "row" },
-        ]}
-      >
-        <View
-          style={[
-            styles.contentStyle,
-            isRTL ? { paddingRight: 10 } : { paddingLeft: 10 },
-          ]}
-        >
           <View
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              marginTop: -8,
-            }}
+            style={[
+              styles.addressBar,
+              { flexDirection: isRTL ? "row-reverse" : "row" },
+            ]}
           >
-            <Icon
-              name="map-marker-outline"
-              type="material-community"
-              size={30}
-              color={colors.BALANCE_GREEN}
-              style={{
-                marginRight: 10,
-              }}
-            />
-            <TouchableOpacity
-              onPress={() => tapAddress("pickup")}
-              style={styles.addressStyle1}
+            <View
+              style={[
+                styles.contentStyle,
+                isRTL ? { paddingRight: 10 } : { paddingLeft: 10 },
+              ]}
             >
-              <Text
+              <View
                 style={{
-                  color: colors.BLUE,
-                  fontFamily: "Uber Move",
-                  fontStyle: "normal",
-                  fontWeight: "bold",
-                  lineHeight: 24,
-                  fontSize: 15,
+                  flexDirection: "row",
+                  alignItems: "center",
+                  marginTop: -8,
                 }}
               >
-                {"Your Location"}
-              </Text>
-              <Text
-                numberOfLines={1}
-                style={[
-                  styles.textStyle,
-                  tripdata.selected == "pickup"
-                    ? { fontSize: 18 }
-                    : { fontSize: 16 },
-                  { textAlign: isRTL ? "right" : "left" },
-                ]}
-              >
-                {tripdata.pickup && tripdata.pickup.add
-                  ? tripdata.pickup.add
-                  : t("map_screen_where_input_text")}
-              </Text>
-            </TouchableOpacity>
+                <Icon
+                  name="map-marker-outline"
+                  type="material-community"
+                  size={30}
+                  color={colors.BALANCE_GREEN}
+                  style={{
+                    marginRight: 10,
+                  }}
+                />
+                <TouchableOpacity
+                  onPress={() => tapAddress("pickup")}
+                  style={styles.addressStyle1}
+                >
+                  <Text
+                    style={{
+                      color: colors.BLUE,
+                      fontFamily: "Uber Move",
+                      fontStyle: "normal",
+                      fontWeight: "bold",
+                      lineHeight: 24,
+                      fontSize: 15,
+                    }}
+                  >
+                    {"Your Location"}
+                  </Text>
+                  <Text
+                    numberOfLines={1}
+                    style={[
+                      styles.textStyle,
+                      tripdata.selected == "pickup"
+                        ? { fontSize: 18 }
+                        : { fontSize: 16 },
+                      { textAlign: isRTL ? "right" : "left" },
+                    ]}
+                  >
+                    {tripdata.pickup && tripdata.pickup.add
+                      ? tripdata.pickup.add
+                      : t("map_screen_where_input_text")}
+                  </Text>
+                </TouchableOpacity>
+              </View>
+            </View>
           </View>
-        </View>
-      </View>
 
-      <View
-        style={[
-          styles.addressBar1,
-          { flexDirection: isRTL ? "row-reverse" : "row" },
-        ]}
-      >
-        <View
-          style={[
-            styles.contentStyle,
-            isRTL ? { paddingRight: 10 } : { paddingLeft: 10 },
-          ]}
-        >
           <View
-            style={{
-              flexDirection: "row",
-              alignItems: "center",
-              marginTop: -7,
-            }}
+            style={[
+              styles.addressBar1,
+              { flexDirection: isRTL ? "row-reverse" : "row" },
+            ]}
           >
-            <Icon
-              name="magnify"
-              type="material-community"
-              size={35}
-              color={colors.RED}
-              style={{
-                marginRight: 10,
-              }}
-            />
-            <TouchableOpacity
-              onPress={() => tapAddress("drop")}
-              style={styles.addressStyle2}
+            <View
+              style={[
+                styles.contentStyle,
+                isRTL ? { paddingRight: 10 } : { paddingLeft: 10 },
+              ]}
             >
-              <Text
-                numberOfLines={1}
-                style={[
-                  styles.textStyle,
-                  tripdata.selected == "drop"
-                    ? { fontSize: 18 }
-                    : { fontSize: 16 },
-                  { textAlign: isRTL ? "right" : "left" },
-                ]}
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  marginTop: -7,
+                }}
               >
-                {tripdata.drop && tripdata.drop.add
-                  ? tripdata.drop.add
-                  : "Where are you going ?"}
-              </Text>
-            </TouchableOpacity>
+                <Icon
+                  name="magnify"
+                  type="material-community"
+                  size={35}
+                  color={colors.RED}
+                  style={{
+                    marginRight: 10,
+                  }}
+                />
+                <TouchableOpacity
+                  onPress={() => tapAddress("drop")}
+                  style={styles.addressStyle2}
+                >
+                  <Text
+                    numberOfLines={1}
+                    style={[
+                      styles.textStyle,
+                      tripdata.selected == "drop"
+                        ? { fontSize: 18 }
+                        : { fontSize: 16 },
+                      { textAlign: isRTL ? "right" : "left" },
+                    ]}
+                  >
+                    {tripdata.drop && tripdata.drop.add
+                      ? tripdata.drop.add
+                      : "Where are you going ?"}
+                  </Text>
+                </TouchableOpacity>
+              </View>
+            </View>
           </View>
-        </View>
-      </View>
         </>
 
-        
         // <View
         //   style={[
         //     styles.addressBar,
@@ -1821,119 +1815,6 @@ export default function MapScreen(props) {
         //   </View>
         // </View>
       )}
-
-      {/* {settings && settings.horizontal_view ? (
-        <View style={styles.fullCarView}>
-          <ScrollView
-            horizontal={true}
-            style={styles.fullCarScroller}
-            showsHorizontalScrollIndicator={false}
-          >
-            {allCarTypes.map((prop, key) => {
-              return (
-                <View
-                  key={key}
-                  style={[
-                    styles.cabDivStyle,
-                    {
-                      backgroundColor:
-                        prop.active == true ? colors.BOX_BG : colors.WHITE,
-                    },
-                  ]}
-                >
-                  <CarHorizontal
-                    onPress={() => {
-                      selectCarType(prop, key);
-                    }}
-                    carData={prop}
-                    settings={settings}
-                    styles={styles}
-                  />
-                </View>
-              );
-            })}
-          </ScrollView>
-        </View>
-      ) : (
-        <View
-          style={[styles.carShow, { height: 25 }]}
-          onTouchStart={(e) => setTouchY(e.nativeEvent.pageY)}
-          onTouchEnd={(e) => {
-            if (touchY - e.nativeEvent.pageY > 10 && !isEditing)
-              setIsEditing(!isEditing);
-            if (e.nativeEvent.pageY - touchY > 10 && isEditing)
-              setIsEditing(!isEditing);
-          }}
-        >
-          <View style={[styles.bar, { backgroundColor: MAIN_COLOR }]}></View>
-        </View>
-      )} */}
-
-      {/* old version of car selection */}
-
-      {/* {isEditing == true && settings && !settings.horizontal_view ? (
-        <View
-          style={[
-            styles.carShow,
-            {
-              paddingTop: 10,
-              height: 250,
-              minHeight: 80,
-              alignItems: "center",
-              flexDirection: "column",
-              backgroundColor:
-                isEditing == true ? colors.BACKGROUND_PRIMARY : colors.WHITE,
-            },
-          ]}
-          onTouchStart={(e) => setTouchY(e.nativeEvent.pageY)}
-          onTouchEnd={(e) => {
-            if (touchY - e.nativeEvent.pageY > 10 && !isEditing)
-              setIsEditing(!isEditing);
-            if (e.nativeEvent.pageY - touchY > 10 && isEditing)
-              setIsEditing(!isEditing);
-          }}
-        >
-          <View style={[styles.bar, { backgroundColor: MAIN_COLOR }]}></View>
-
-          <Animated.View
-            style={{
-              alignItems: "center",
-              backgroundColor: colors.BACKGROUND_PRIMARY,
-              flex: animation,
-              paddingTop: 6,
-            }}
-          >
-            {allCarTypes && allCarTypes.length > 0 ? (
-              <ScrollView vertical={true} showsVerticalScrollIndicator={false}>
-                {allCarTypes.map((prop, index) => {
-                  return (
-                    <CarVertical
-                      onPress={() => {
-                        selectCarType(prop, index);
-                      }}
-                      carData={prop}
-                      settings={settings}
-                      styles={styles}
-                      key={index}
-                    />
-                  );
-                })}
-              </ScrollView>
-            ) : (
-              <Text
-                style={{
-                  color: colors.HEADER,
-                  fontWeight: "bold",
-                  fontSize: 20,
-                  justifyContent: "center",
-                }}
-              >
-                {t("service_start_soon")}
-              </Text>
-            )}
-          </Animated.View>
-        </View>
-      ) : null} */}
 
       {/* new update choosing car design */}
 
@@ -2009,7 +1890,7 @@ export default function MapScreen(props) {
           </Text>
           <Text
             onPress={() => {
-              props.navigation.navigate("Cars");
+              // props.navigation.navigate("Cars");
             }}
             style={{
               fontSize: 22,
@@ -2256,7 +2137,7 @@ export default function MapScreen(props) {
                   {
                     backgroundColor: colors.BLUE,
                     marginRight: bookLaterLoading ? 20 : 0,
-                    marginLeft: bookLaterLoading ? -20 : 0,
+                    marginLeft: bookLaterLoading ? -25 : 0,
                     width: bookLaterLoading ? width - 40 : width / 2.3,
                     paddingRight: 20,
                   },
@@ -2282,8 +2163,8 @@ export default function MapScreen(props) {
               buttonStyle={[
                 styles.buttonStyle,
                 {
-                  width: bookLoading ? width - 40 : width / 2.3,
-                  marginLeft: bookLaterLoading ? 20 : 0,
+                  width: bookLoading ? width - 49 : width / 2.3,
+                  marginLeft: bookLaterLoading ? 22 : 0,
                 },
               ]}
               containerStyle={[
@@ -2534,7 +2415,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
 
-
   ballandsquare: {
     width: 12,
     alignItems: "center",
@@ -2593,19 +2473,7 @@ const styles = StyleSheet.create({
     height: 160,
     flexDirection: "row",
   },
-  cabDivStyle: {
-    backgroundColor: colors.WHITE,
-    width: (width - 40) / 3,
-    height: "95%",
-    alignItems: "center",
-    marginHorizontal: 5,
-    shadowColor: "black",
-    shadowOffset: { width: 0, height: 5 },
-    shadowOpacity: 0.5,
-    shadowRadius: 3,
-    borderRadius: 8,
-    elevation: 3,
-  },
+
   imageStyle: {
     height: 50,
     width: "100%",
@@ -2823,7 +2691,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     height: Platform.OS == "ios" ? 45 : 50,
     width: Platform.OS == "ios" ? 45 : 50,
-   marginBottom:35,
+    marginBottom: 35,
     right: 10,
     backgroundColor: "#fff",
     borderRadius: Platform.OS == "ios" ? 30 : 12,
@@ -2840,7 +2708,6 @@ const styles = StyleSheet.create({
     width: Platform.OS == "ios" ? 45 : 50,
     alignItems: "center",
     justifyContent: "center",
-
   },
   addressBar: {
     position: "absolute",

@@ -247,7 +247,7 @@ export default function BookedCabScreen(props) {
                             <Button
                                 title={t('cancel_ride')}
                                 loading={false}
-                                loadingProps={{ size: "large", color: colors.INDICATOR_BLUE }}
+                                loadingProps={{ size: "large", color: colors.BLUE }}
                                 titleStyle={{ color: colors.WHITE, fontWeight: 'bold' }}
                                 onPress={() => {
                                     role == 'customer' ?
@@ -262,7 +262,7 @@ export default function BookedCabScreen(props) {
                                         );
                                 }
                                 }
-                                buttonStyle={{ height: '100%', backgroundColor: colors.HEADER }}
+                                buttonStyle={{ height: '100%', backgroundColor: colors.BLUE }}
                                 containerStyle={{ height: '100%' }}
                             />
                         </View>
@@ -454,7 +454,7 @@ export default function BookedCabScreen(props) {
                                     initial={0}
                                     animation={false}
                                     buttonColor={colors.RADIO_BUTTON}
-                                    selectedButtonColor={colors.RADIO_BUTTON_SELECTION}
+                                    selectedButtonColor={colors.BLUE}
                                     buttonSize={10}
                                     buttonOuterSize={20}
                                     style={styles.radioContainerStyle}
@@ -726,7 +726,7 @@ export default function BookedCabScreen(props) {
                                         name="ios-call"
                                         type="ionicon"
                                         size={15}
-                                        color={colors.INDICATOR_BLUE}
+                                        color={colors.BLUE}
                                     />
                                     {curBooking ? curBooking.deliveryPersonPhone : ''}
                                 </Text>
@@ -739,7 +739,7 @@ export default function BookedCabScreen(props) {
                                         name="ios-call"
                                         type="ionicon"
                                         size={15}
-                                        color={colors.INDICATOR_BLUE}
+                                        color={colors.BLUE}
                                     />
                                     {curBooking ? curBooking.customer_contact : ''}
                                 </Text>
@@ -843,7 +843,7 @@ export default function BookedCabScreen(props) {
                                 coordinates={liveRouteCoords}
                                 strokeWidth={5}
                                 strokeColor={colors.INDICATOR_BLUE}
-                                lineDashPattern={[1]}
+                               // lineDashPattern={[1]}
                             />
                             : null}
 
@@ -852,7 +852,7 @@ export default function BookedCabScreen(props) {
                                 coordinates={curBooking.coords}
                                 strokeWidth={4}
                                 strokeColor={colors.INDICATOR_BLUE}
-                                lineDashPattern={[1]}
+                               // lineDashPattern={[1]}
                             />
                             : null}
                     </MapView>
@@ -862,7 +862,7 @@ export default function BookedCabScreen(props) {
                         <Icon
                             name={isRTL?'arrow-right':'arrow-left'}
                             type='font-awesome'
-                            color='#517fa4'
+                            color={colors.BLUE}
                             size={26}
                         />
                     </TouchableOpacity>
@@ -1197,7 +1197,7 @@ const styles = StyleSheet.create({
     radioStyle: { paddingBottom: 25 },
     cancelModalButtosContainer: { flex: 1, backgroundColor: colors.BUTTON, alignItems: 'center', justifyContent: 'center' },
     buttonSeparataor: { height: height / 35, width: 0.8, backgroundColor: colors.WHITE, alignItems: 'center', marginTop: 3 },
-    cancelModalButttonStyle: { backgroundColor: colors.BUTTON, borderRadius: 0 },
+    cancelModalButttonStyle: { backgroundColor: colors.BLUE, borderRadius: 0 },
     cancelModalButtonContainerStyle: { flex: 1, width: (width * 2) / 2, backgroundColor: colors.BUTTON, alignSelf: 'center', margin: 0 },
     signInTextStyle: {
         fontFamily: 'Roboto-Bold',

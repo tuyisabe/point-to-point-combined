@@ -24,8 +24,9 @@ import { checkSearchPhrase, appConsts } from "../common/sharedFunctions";
 var { width } = Dimensions.get("window");
 import { StackActions } from "@react-navigation/native";
 import { FirebaseContext } from "common/src";
+
+const appcat = "taxi";
 export default function SearchScreen(props) {
-  const { appcat } = useContext(FirebaseContext);
   const { t } = i18n;
   const isRTL =
     i18n.locale.indexOf("he") === 0 || i18n.locale.indexOf("ar") === 0;
@@ -35,6 +36,7 @@ export default function SearchScreen(props) {
     updateTripPickup,
     updateTripDrop,
   } = api;
+  
   const dispatch = useDispatch();
   const [searchResults, setSearchResults] = useState([]);
   const [isShowingResults, setIsShowingResults] = useState(false);

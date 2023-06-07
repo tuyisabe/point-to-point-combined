@@ -437,7 +437,7 @@ export default function DriverTrips(props) {
                                             coordinates={item.coords}
                                             strokeWidth={4}
                                             strokeColor={colors.INDICATOR_BLUE}
-                                            lineDashPattern={[1]}
+                                           // lineDashPattern={[1]}
                                         />
                                         : null}
                                 </MapView>
