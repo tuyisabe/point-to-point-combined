@@ -11,7 +11,7 @@ import {
   Platform,
 } from "react-native";
 import MapView, { Polyline, PROVIDER_GOOGLE, Marker } from "react-native-maps";
-import { Avatar, Button,Icon } from "react-native-elements";
+import { Avatar, Button, Icon } from "react-native-elements";
 import { colors } from "../common/theme";
 var { width } = Dimensions.get("window");
 import i18n from "i18n-js";
@@ -27,6 +27,14 @@ export default function RideDetails(props) {
   const goToBooking = (id) => {
     if (paramData.status == "PAYMENT_PENDING") {
       props.navigation.navigate("PaymentDetails", { booking: paramData });
+    } else {
+      props.navigation.replace("BookedCab", { bookingId: id });
+    }
+  };
+
+  const goToReceipt = (id) => {
+    if (paramData.status == "COMPLETE") {
+      props.navigation.navigate("Receipt", { booking: paramData});
     } else {
       props.navigation.replace("BookedCab", { bookingId: id });
     }
@@ -104,12 +112,12 @@ export default function RideDetails(props) {
                   />
                 ) : paramData.driver_name != "" ? (
                   <Icon
-                  name="user"
-                  type="font-awesome"
-                  size={30}
-                  color={colors.BLUE}
-                  style={{ marginTop: 5 }}
-                />
+                    name="user"
+                    type="font-awesome"
+                    size={30}
+                    color={colors.BLUE}
+                    style={{ marginTop: 5 }}
+                  />
                 ) : null
               ) : null}
               <View
@@ -768,8 +776,32 @@ export default function RideDetails(props) {
                 containerStyle={styles.paynowButton}
               />
             </View>
-          ) : null}
+          ) : <View style={styles.locationView2}>
+          <Button
+            title={"Receipt"}
+
+            loading={false}
+            loadingProps={{ size: "large", color: colors.GREEN_DOT }}
+            titleStyle={{
+              fontSize: 20,
+              fontFamily: "Uber Move",
+              fontWeight: "bold",
+            }}
+            onPress={() => {
+
+              goToReceipt(paramData.id);
+            }}
+            buttonStyle={{
+              height: 55,
+              width: "100%",
+              backgroundColor: colors.BLUE,
+            }}
+            containerStyle={styles.paynowButton}
+          />
+
+        </View>}
         </View>
+
       </ScrollView>
     </View>
   );

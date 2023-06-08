@@ -13,19 +13,18 @@ import {
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { Divider, Button, Header, Icon } from "react-native-elements";
-import StarRating from "react-native-star-rating";
 import { colors } from "../common/theme";
 var { width } = Dimensions.get("window");
 import i18n from "i18n-js";
-import { printToFileAsync } from "expo-print";
-import { shareAsync } from "expo-sharing";
+// import { printToFileAsync } from "expo-print";
+// import { shareAsync } from "expo-sharing";
 import { useDispatch, useSelector } from "react-redux";
-import { FirebaseContext } from "common/src";
+import { api } from "common";
 import moment from "moment/min/moment-with-locales";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Receipt(props) {
-  const { api } = useContext(FirebaseContext);
+  //const { api } = useContext(FirebaseContext);
   const { updateBooking, fetchProfile } = api;
   const dispatch = useDispatch();
   const { t } = i18n;
@@ -1631,7 +1630,7 @@ export default function Receipt(props) {
                   }}
                   onPress={() =>submitNow() }
                 >
-                
+                  {" "}
                   Resend email
                 </Text>
               </View>
@@ -1647,6 +1646,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
+    marginTop:-50,
   },
   header: {
     flexDirection: "row",

@@ -100,7 +100,7 @@ export default function App() {
     return (
       <View style={styles.container}>
         <ImageBackground
-          source={require("./assets/images/intro.jpg")}
+          source={require("./assets/images/intro.gif")}
           resizeMode="stretch"
           style={styles.imagebg}
         >
