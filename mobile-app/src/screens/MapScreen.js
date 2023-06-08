@@ -1311,7 +1311,7 @@ export default function MapScreen(props) {
             showsMyLocationButton={false}
             style={styles.mapViewStyle}
             initialRegion={region}
-            onRegionChangeComplete={onRegionChangeComplete}
+            //onRegionChangeComplete={onRegionChangeComplete}
             onPanDrag={() => setDragging(30)}
             minZoomLevel={13}
           >
